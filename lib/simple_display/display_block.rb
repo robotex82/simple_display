@@ -15,7 +15,8 @@ module SimpleDisplay
 
     def method_missing(method, *args, &block)
       klass = "#{method}_displayer".camelize
-      klass = SimpleDisplay::Displayers.const_get(klass)
+      #klass = SimpleDisplay::Displayers.const_get(klass)
+      klass = Object.class.const_get(klass)
       if klass.is_a?(Class)
         klass.new(model, helper).display(*args, &block)
       else

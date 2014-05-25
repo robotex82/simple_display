@@ -9,7 +9,13 @@ module SimpleDisplay
       end
 
       def display(field, label = nil, &block)
-        field_value = model.public_send(field)
+        # Fallback to #send if public_send is not available
+        if model.respond_to?(:public_send)
+          field_value = model.public_send(field)
+        else
+          field_value = model.send(field)
+        end
+
         if field_value.present?
           content = display_value(field_value, &block)
 
