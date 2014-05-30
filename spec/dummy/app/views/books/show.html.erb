@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<%= display_for @book do |d| %>
+  <dl>
+    <%= d.display  :title %>
+    <%= d.currency :price %>
+    <%= d.display  :description %>
+  </dl>
+<% end %>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

@@ -1,3 +1,4 @@
+# require 'simple_display/displayers'
 require 'simple_display/version'
 require 'action_view'
 require 'simple_display/display_block'
@@ -11,4 +12,5 @@ module SimpleDisplay
   end
 end
 
-require 'simple_display/railtie' if defined?(Rails)
+#require 'simple_display/engine' if defined?(Rails)
+require 'simple_display/engine' if defined?(Rails)

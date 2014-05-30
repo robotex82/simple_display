@@ -1,0 +1,811 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (13.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (8.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateBooks (20140530150049)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "price" decimal, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140530150049')[0m
+  [1m[35m (14.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (27.3ms)[0m  [1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "price" decimal, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (9.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (9.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (8.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140530150049')[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 10.64.62.35 at 2014-05-30 17:14:56 +0200
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  actionpack (3.2.18) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.18) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.18) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.18) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.18) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.18) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.18) lib/rails/engine.rb:484:in `call'
+  railties (3.2.18) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.18) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/roberto_vasquez/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/roberto_vasquez/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/roberto_vasquez/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/books" for 10.64.62.35 at 2014-05-30 17:17:15 +0200
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  Rendered books/index.html.erb within layouts/application (1.9ms)
+Compiled books.css  (0ms)  (pid 25058)
+Compiled scaffold.css  (0ms)  (pid 25058)
+Compiled application.css  (12ms)  (pid 25058)
+Compiled books.js  (0ms)  (pid 25058)
+Compiled application.js  (5ms)  (pid 25058)
+Completed 200 OK in 68.8ms (Views: 41.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/books.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:15 +0200
+Served asset /books.css - 200 OK (8ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:15 +0200
+Served asset /scaffold.css - 200 OK (6ms)
+
+
+Started GET "/assets/application.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:15 +0200
+Served asset /application.css - 200 OK (8ms)
+
+
+Started GET "/assets/books.js?body=1" for 10.64.62.35 at 2014-05-30 17:17:15 +0200
+Served asset /books.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 10.64.62.35 at 2014-05-30 17:17:15 +0200
+Served asset /application.js - 200 OK (3ms)
+
+
+Started GET "/books/new" for 10.64.62.35 at 2014-05-30 17:17:17 +0200
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (10.1ms)
+  Rendered books/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 23.9ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:17 +0200
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 10.64.62.35 at 2014-05-30 17:17:17 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/books.js?body=1" for 10.64.62.35 at 2014-05-30 17:17:17 +0200
+Served asset /books.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:17 +0200
+Served asset /scaffold.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/books.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:17 +0200
+Served asset /books.css - 304 Not Modified (0ms)
+
+
+Started POST "/books" for 10.64.62.35 at 2014-05-30 17:17:33 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NUqjd2wXfoPFc0EypCHquwN+LX48fiYo3YwdmTPD9FA=", "book"=>{"title"=>"A book", "price"=>"9,99", "description"=>"This is the description\r\n"}, "commit"=>"Create Book"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.6ms)[0m  [1mINSERT INTO "books" ("created_at", "description", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Fri, 30 May 2014 15:17:33 UTC +00:00], ["description", "This is the description\r\n"], ["price", #<BigDecimal:5d00ed0,'0.9E1',9(18)>], ["title", "A book"], ["updated_at", Fri, 30 May 2014 15:17:33 UTC +00:00]]
+  [1m[35m (160.7ms)[0m  commit transaction
+Redirected to http://dev.anwr-modules.com:3000/books/1
+Completed 302 Found in 172.7ms (ActiveRecord: 167.4ms)
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:17:33 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 8.2ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/books.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:34 +0200
+Served asset /books.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:34 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:34 +0200
+Served asset /scaffold.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 10.64.62.35 at 2014-05-30 17:17:34 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/books.js?body=1" for 10.64.62.35 at 2014-05-30 17:17:34 +0200
+Served asset /books.js - 304 Not Modified (0ms)
+
+
+Started GET "/books" for 10.64.62.35 at 2014-05-30 17:17:35 +0200
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" 
+  Rendered books/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6.8ms (Views: 5.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:35 +0200
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:35 +0200
+Served asset /scaffold.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 10.64.62.35 at 2014-05-30 17:17:35 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/books.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:35 +0200
+Served asset /books.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/books.js?body=1" for 10.64.62.35 at 2014-05-30 17:17:35 +0200
+Served asset /books.js - 304 Not Modified (0ms)
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:17:38 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 6.2ms (Views: 5.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:38 +0200
+Served asset /scaffold.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/books.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:38 +0200
+Served asset /books.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/books.js?body=1" for 10.64.62.35 at 2014-05-30 17:17:38 +0200
+Served asset /books.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 10.64.62.35 at 2014-05-30 17:17:38 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 10.64.62.35 at 2014-05-30 17:17:38 +0200
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:18:55 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 9.1ms
+
+ActionView::Template::Error (cannot load such file -- simple_display/displayers):
+    2: 
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+  app/views/books/show.html.erb:5:in `block in _app_views_books_show_html_erb___98540787105638377_45875960'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb___98540787105638377_45875960'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:23:00 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 58.3ms
+
+ActionView::Template::Error (cannot load such file -- simple_display/displayers):
+    2: 
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+  app/views/books/show.html.erb:5:in `block in _app_views_books_show_html_erb___516371153998029786_70097492736640'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb___516371153998029786_70097492736640'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.2ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:24:33 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 70.5ms
+
+ActionView::Template::Error (cannot load such file -- simple_display/displayers):
+    2: 
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+  app/views/books/show.html.erb:5:in `block in _app_views_books_show_html_erb__2869458876537297172_69867475105280'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb__2869458876537297172_69867475105280'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:24:39 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 57.3ms
+
+ActionView::Template::Error (cannot load such file -- simple_display/displayers):
+    2: 
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+  app/views/books/show.html.erb:5:in `block in _app_views_books_show_html_erb___4092701438355239975_39232120'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb___4092701438355239975_39232120'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.3ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:27:15 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 64.6ms
+
+ActionView::Template::Error (uninitialized constant SimpleDisplay::Displayers::Base):
+    2: 
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+  app/views/books/show.html.erb:5:in `block in _app_views_books_show_html_erb___1758096782385821087_70114907692320'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb___1758096782385821087_70114907692320'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.9ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:28:03 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.6ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 63.7ms
+
+ActionView::Template::Error (uninitialized constant SimpleDisplay::Displayers::Base):
+    2: 
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+  app/views/books/show.html.erb:5:in `block in _app_views_books_show_html_erb___262162119843444815_47394320'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb___262162119843444815_47394320'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:28:25 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (12.5ms)
+Completed 500 Internal Server Error in 65.0ms
+
+ActionView::Template::Error (uninitialized constant SimpleDisplay::Displayers::Base):
+    2: 
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+  app/views/books/show.html.erb:5:in `block in _app_views_books_show_html_erb___4191060417309516937_69939484978700'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb___4191060417309516937_69939484978700'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.8ms)
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:28:27 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 11.0ms
+
+ActionView::Template::Error (uninitialized constant SimpleDisplay::Displayers::Base):
+    2: 
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+  app/views/books/show.html.erb:5:in `block in _app_views_books_show_html_erb___4191060417309516937_69939484978700'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb___4191060417309516937_69939484978700'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.7ms)
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:28:28 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 11.7ms
+
+ActionView::Template::Error (uninitialized constant SimpleDisplay::Displayers::Base):
+    2: 
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+  app/views/books/show.html.erb:5:in `block in _app_views_books_show_html_erb___4191060417309516937_69939484978700'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb___4191060417309516937_69939484978700'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:29:24 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 61.4ms
+
+ActionView::Template::Error (Expected /home/roberto_vasquez/rails/forks/simple_display-master/app/displayers/base.rb to define Base):
+    2: 
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+  app/views/books/show.html.erb:5:in `block in _app_views_books_show_html_erb__2807757172272718566_35492140'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb__2807757172272718566_35492140'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:30:12 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (13.4ms)
+Completed 500 Internal Server Error in 66.4ms
+
+ActionView::Template::Error (uninitialized constant SimpleDisplay::Displayers::Base):
+    2: 
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+  app/views/books/show.html.erb:5:in `block in _app_views_books_show_html_erb__312628553332628021_70066488468320'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb__312628553332628021_70066488468320'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:31:36 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (19.9ms)
+Completed 500 Internal Server Error in 60.4ms
+
+ActionView::Template::Error (Expected /home/roberto_vasquez/rails/forks/simple_display-master/app/displayers/currency_displayer.rb to define CurrencyDisplayer):
+    3: <%= display_for @book do |d| %>
+    4:   <dl>
+    5:     <%= d.display  :title %>
+    6:     <%= d.currency :price %>
+    7:     <%= d.display  :description %>
+    8:   </dl>
+    9: <% end %>
+  app/views/books/show.html.erb:6:in `block in _app_views_books_show_html_erb__3880992423394931002_69876603041000'
+  app/views/books/show.html.erb:3:in `_app_views_books_show_html_erb__3880992423394931002_69876603041000'
+  app/controllers/books_controller.rb:18:in `show'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.5ms)
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:32:03 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 32.7ms (Views: 23.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/books.css?body=1" for 10.64.62.35 at 2014-05-30 17:32:04 +0200
+Served asset /books.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 10.64.62.35 at 2014-05-30 17:32:04 +0200
+Served asset /scaffold.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/books.js?body=1" for 10.64.62.35 at 2014-05-30 17:32:04 +0200
+Served asset /books.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.css?body=1" for 10.64.62.35 at 2014-05-30 17:32:04 +0200
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/application.js?body=1" for 10.64.62.35 at 2014-05-30 17:32:04 +0200
+Served asset /application.js - 304 Not Modified (3ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/books/1" for 10.64.62.35 at 2014-05-30 17:34:32 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered books/show.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 103.2ms (Views: 68.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/books.css?body=1" for 10.64.62.35 at 2014-05-30 17:34:32 +0200
+Served asset /books.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 10.64.62.35 at 2014-05-30 17:34:32 +0200
+Served asset /scaffold.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.css?body=1" for 10.64.62.35 at 2014-05-30 17:34:32 +0200
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 10.64.62.35 at 2014-05-30 17:34:32 +0200
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/books.js?body=1" for 10.64.62.35 at 2014-05-30 17:34:32 +0200
+Served asset /books.js - 304 Not Modified (2ms)
+
+
+Started GET "/books" for 10.64.62.35 at 2014-05-30 17:36:19 +0200
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" 
+  Rendered books/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 7.9ms
+
+ActionView::Template::Error (wrong number of arguments (2 for 1)):
+    11:   </tr>
+    12: 
+    13: <% @books.each do |book| %>
+    14:   <%= display_for @book, :as => :table do |d| %>
+    15:     <%= d.display  :title %>
+    16:     <%= d.currency :price %>
+    17:     <%= d.display  :description %>
+  app/views/books/index.html.erb:14:in `block in _app_views_books_index_html_erb___2134112333128119983_51631800'
+  app/views/books/index.html.erb:13:in `each'
+  app/views/books/index.html.erb:13:in `_app_views_books_index_html_erb___2134112333128119983_51631800'
+  app/controllers/books_controller.rb:7:in `index'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/books" for 10.64.62.35 at 2014-05-30 17:47:14 +0200
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  Rendered books/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 47.2ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    12: 
+    13: <% @books.each do |book| %>
+    14:   <%= display_for @book do |d| %>
+    15:     <%= d.display :title %>
+    16:     <%= d.currency :price %>
+    17:     <%= d.display :description %>
+    18:     <td><%= link_to 'Show', book %></td>
+  app/views/books/index.html.erb:15:in `block (2 levels) in _app_views_books_index_html_erb__4073444297232532463_69817580831240'
+  app/views/books/index.html.erb:14:in `block in _app_views_books_index_html_erb__4073444297232532463_69817580831240'
+  app/views/books/index.html.erb:13:in `each'
+  app/views/books/index.html.erb:13:in `_app_views_books_index_html_erb__4073444297232532463_69817580831240'
+  app/controllers/books_controller.rb:7:in `index'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.1ms)
+
+
+Started GET "/books" for 10.64.62.35 at 2014-05-30 17:47:45 +0200
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" 
+  Rendered books/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 30.8ms (Views: 29.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/books.css?body=1" for 10.64.62.35 at 2014-05-30 17:47:46 +0200
+Served asset /books.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/books.js?body=1" for 10.64.62.35 at 2014-05-30 17:47:46 +0200
+Served asset /books.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 10.64.62.35 at 2014-05-30 17:47:46 +0200
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 10.64.62.35 at 2014-05-30 17:47:46 +0200
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 10.64.62.35 at 2014-05-30 17:47:46 +0200
+Served asset /scaffold.css - 304 Not Modified (2ms)
+
+
+Started GET "/books" for 10.64.62.35 at 2014-05-30 17:48:00 +0200
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  Rendered books/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 8.2ms
+
+ActionView::Template::Error (uninitialized constant SimpleDisplay::Table):
+    11:   </tr>
+    12: 
+    13: <% @books.each do |book| %>
+    14:   <%= display_for book, :as => :table do |d| %>
+    15:     <%= d.display :title %>
+    16:     <%= d.currency :price %>
+    17:     <%= d.display :description %>
+  app/views/books/index.html.erb:14:in `block in _app_views_books_index_html_erb__4073444297232532463_49510660'
+  app/views/books/index.html.erb:13:in `each'
+  app/views/books/index.html.erb:13:in `_app_views_books_index_html_erb__4073444297232532463_49510660'
+  app/controllers/books_controller.rb:7:in `index'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.9ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/books" for 10.64.62.35 at 2014-05-30 17:55:44 +0200
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  Rendered books/index.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 50.1ms
+
+ActionView::Template::Error (uninitialized constant SimpleDisplay::Table):
+    11:   </tr>
+    12: 
+    13: <% @books.each do |book| %>
+    14:   <%= display_for book, :as => :table do |d| %>
+    15:     <%= d.display :title %>
+    16:     <%= d.currency :price %>
+    17:     <%= d.display :description %>
+  app/views/books/index.html.erb:14:in `block in _app_views_books_index_html_erb__2792774932138178553_69922136331440'
+  app/views/books/index.html.erb:13:in `each'
+  app/views/books/index.html.erb:13:in `_app_views_books_index_html_erb__2792774932138178553_69922136331440'
+  app/controllers/books_controller.rb:7:in `index'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/books" for 10.64.62.35 at 2014-05-30 17:57:32 +0200
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  Rendered books/index.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 53.8ms
+
+ActionView::Template::Error (uninitialized constant Class::TableDisplayBlock):
+    11:   </tr>
+    12: 
+    13: <% @books.each do |book| %>
+    14:   <%= display_for book, :as => :table do |d| %>
+    15:     <%= d.display :title %>
+    16:     <%= d.currency :price %>
+    17:     <%= d.display :description %>
+  app/views/books/index.html.erb:14:in `block in _app_views_books_index_html_erb__4435459542713337172_70337741644120'
+  app/views/books/index.html.erb:13:in `each'
+  app/views/books/index.html.erb:13:in `_app_views_books_index_html_erb__4435459542713337172_70337741644120'
+  app/controllers/books_controller.rb:7:in `index'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.8ms)
+
+
+Started GET "/books" for 10.64.62.35 at 2014-05-30 18:00:52 +0200
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" 
+  Rendered books/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 8.9ms
+
+ActionView::Template::Error (uninitialized constant Class::TableDisplayBlock):
+    11:   </tr>
+    12: 
+    13: <% @books.each do |book| %>
+    14:   <%= display_for book, :as => :table do |d| %>
+    15:     <%= d.display :title %>
+    16:     <%= d.currency :price %>
+    17:     <%= d.display :description %>
+  app/views/books/index.html.erb:14:in `block in _app_views_books_index_html_erb__4435459542713337172_70337741644120'
+  app/views/books/index.html.erb:13:in `each'
+  app/views/books/index.html.erb:13:in `_app_views_books_index_html_erb__4435459542713337172_70337741644120'
+  app/controllers/books_controller.rb:7:in `index'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/books" for 10.64.62.35 at 2014-05-30 18:01:08 +0200
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  Rendered books/index.html.erb within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 31.0ms
+
+ActionView::Template::Error (uninitialized constant SimpleDisplay::DisplayBlock::Base):
+    11:   </tr>
+    12: 
+    13: <% @books.each do |book| %>
+    14:   <%= display_for book, :as => :table do |d| %>
+    15:     <%= d.display :title %>
+    16:     <%= d.currency :price %>
+    17:     <%= d.display :description %>
+  app/views/books/index.html.erb:14:in `block in _app_views_books_index_html_erb__4435459542713337172_70337741644120'
+  app/views/books/index.html.erb:13:in `each'
+  app/views/books/index.html.erb:13:in `_app_views_books_index_html_erb__4435459542713337172_70337741644120'
+  app/controllers/books_controller.rb:7:in `index'
+
+
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/roberto_vasquez/.rvm/gems/ruby-2.1.2@simple_display-master/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.8ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/books" for 10.64.62.35 at 2014-05-30 18:02:30 +0200
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  Rendered books/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 82.2ms (Views: 44.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/books.css?body=1" for 10.64.62.35 at 2014-05-30 18:02:30 +0200
+Served asset /books.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scaffold.css?body=1" for 10.64.62.35 at 2014-05-30 18:02:30 +0200
+Served asset /scaffold.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/books.js?body=1" for 10.64.62.35 at 2014-05-30 18:02:30 +0200
+Served asset /books.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.css?body=1" for 10.64.62.35 at 2014-05-30 18:02:30 +0200
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 10.64.62.35 at 2014-05-30 18:02:30 +0200
+Served asset /application.js - 304 Not Modified (4ms)
