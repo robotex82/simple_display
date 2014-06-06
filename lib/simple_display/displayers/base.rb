@@ -9,38 +9,36 @@ module SimpleDisplay
       end
 
       def display(field, label = nil, &block)
-        # Fallback to #send if public_send is not available
+        field_value = extract_field_value(field)
+
+        if field_value.present?
+          display_value(field_value, :field => field, &block)
+        end
+      end
+      
+      def display_action(action, &block)
+        return helper.capture(action, &block) if block_given?
+        action
+      end
+      
+      private
+
+      def extract_field_value(field)
         if model.respond_to?(:public_send)
           field_value = model.public_send(field)
         else
           field_value = model.send(field)
         end
-
-        if field_value.present?
-          content = display_value(field_value, &block)
-
-          line(display_label(field, label), content.to_s)
-        end
       end
 
-      private
-
-      def display_value(field_value, &block)
-        value(field_value, &block)
+      def display_value(field_value, options = {}, &block)
+        value(field_value, options, &block)
       end
 
-      def value(field_value, &block)
+      def value(field_value, options = {}, &block)
         return helper.capture(field_value, &block) if block_given?
+        return helper.link_to field_value, field_value if options.has_key?(:field) and model.class.reflect_on_all_associations.map(&:name).include?(options[:field])
         field_value
-      end
-
-      def display_label(field, label)
-        label || model.class.human_attribute_name(field)
-      end
-
-      def line(dt, dd)
-        helper.content_tag(:dt, dt) +
-          helper.content_tag(:dd, dd)
       end
     end
   end

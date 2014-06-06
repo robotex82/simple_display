@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "books/index" do
+describe "books/index_as_list" do
   before(:each) do
     assign(:books, [
       stub_model(Book,
@@ -18,16 +18,16 @@ describe "books/index" do
 
   it "renders the titles in a table" do
     render
-    expect(rendered).to have_css('td', :text => 'Title', :count => 2)
+    expect(rendered).to have_css('li', :text => 'Title', :count => 2)
   end
   
   it "renders the prices in a table" do
     render
-    expect(rendered).to have_css('td', :text => '$9.99', :count => 2)
+    expect(rendered).to have_css('li', :text => '$9.99', :count => 2)
   end
   
   it "renders the titles in a table" do
     render
-    expect(rendered).to have_css('td', :text => 'MyText', :count => 2)
+    expect(rendered).to have_css('li', :text => 'MyText', :count => 2)
   end
 end

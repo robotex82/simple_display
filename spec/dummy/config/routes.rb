@@ -1,8 +1,13 @@
 Dummy::Application.routes.draw do
-  resources :books
+  resources :authors
 
 
-  resources :books
+  resources :books do
+    collection do
+      get :as_list, :action => 'index_as_list'
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

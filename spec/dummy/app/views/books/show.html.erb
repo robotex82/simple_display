@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<%= display_for @book do |d| %>
-  <dl>
-    <%= d.display  :title %>
-    <%= d.currency :price %>
-    <%= d.display  :description %>
-  </dl>
-<% end %>
+<dl>
+  <%= display_for @book, :as => :definition_list do |d| %>
+    <%= d.display :title %>
+    <%= d.display :price, :as => :currency %>
+    <%= d.display :description %>
+    <%= d.display :author %>
+  <% end %>
+</dl>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

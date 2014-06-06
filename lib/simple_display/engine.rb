@@ -1,9 +1,10 @@
 module SimpleDisplay
   class Engine < ::Rails::Engine
-    config.eager_load_namespaces << SimpleDisplay if Rails::VERSION::MAJOR >= 4
     if Rails::VERSION::MAJOR < 4
       require 'simple_display/displayers/base'
       require 'simple_display/display_block/base'  
+    else
+      config.eager_load_namespaces << SimpleDisplay
     end
 
     initializer 'simple_display.action_view_extensions.display_helper' do
@@ -11,5 +12,4 @@ module SimpleDisplay
     end
   end
 end
-
 

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<%= display_for @author, :as => :unordered_list do |d| %>
+  <ul>
+    <%= d.display :fullname %>
+    <%= d.display :salutation %>
+    <%= d.display :firstname %>
+    <%= d.display :lastname %>
+    <%= d.display :birthdate do %>
+      <%= I18n.l d.model.birthdate %>
+    <% end %>
+    <%= d.display :phone %>
+    <%= d.display :email, :as => :email %>
+    <%= d.display :homepage_url, :as => :link do %>
+      <%= 'click here' %>
+    <% end %>
+    <%= d.actions do %>
+      <%= link_to 'Edit', edit_author_path(@author) %> |
+      <%= link_to 'Back', authors_path %>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>

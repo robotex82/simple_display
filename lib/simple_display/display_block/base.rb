@@ -9,26 +9,58 @@ module SimpleDisplay
         @model, @helper = model, helper
       end
 
-      def display(field, label = nil, &block)
-        base_displayer = SimpleDisplay::Displayers::Base.new(model, helper)
-        base_displayer.display(field, label, &block)
+      def display(field, options = {}, &block)
+        options.reverse_merge!({ :as => :default })
+
+        displayer(options[:as]).display(field, options[:label], &block)
       end
 
-      def method_missing(method, *args, &block)
-        klass = "#{method}_displayer".camelize
-        #klass = SimpleDisplay::Displayers.const_get(klass)
-        klass = Object.class.const_get(klass)
-        if klass.is_a?(Class)
-          klass.new(model, helper).display(*args, &block)
-        else
-          super
+      def actions(options = {}, &block)
+        options.reverse_merge!({ :as => :default })
+        
+        default_actions.each do |action|
+          displayer(options[:as]).display_action(action, &block)
         end
       end
+      
+      private
 
-      def respond_to?(method, *args, &block)
-        klass = "#{method}_displayer".camelize
-        klass = SimpleDisplay::Displayers.const_get(klass).is_a?(Class) || super
+      def displayer(displayer_type)
+        klass = "#{displayer_type}_displayer".camelize
+        klass = Object.class.const_get(klass)
+        unless klass.is_a?(Class)
+          raise DisplayerNotDefinedException, "#{klass.to_s} not defined"          
+        end
+        return klass.new(model, helper)
+      end
+
+      def extract_field_label(field)
+        model.class.human_attribute_name(field)
+      end
+      
+#      def value_prefix
+#        "".html_safe
+#      end
+#      
+#      def value_suffix
+#        "".html_safe
+#      end
+     
+      def default_actions
+        [ show_action, edit_action, delete_action ]
+      end
+      
+      def show_action
+        helper.link_to 'Show', model
+      end
+
+      def edit_action
+        helper.link_to 'Edit', [ :edit, model ]
+      end
+
+      def delete_action
+        helper.link_to 'Destroy', model, method: :delete, data: { confirm: 'Are you sure?' }
       end
     end
   end
- end
+end

@@ -10,6 +10,10 @@ class BooksController < ApplicationController
     end
   end
 
+  def index_as_list
+    index
+  end
+
   # GET /books/1
   # GET /books/1.json
   def show

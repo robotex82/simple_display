@@ -1,5 +1,6 @@
 # require 'simple_display/displayers'
 require 'simple_display/version'
+require 'simple_display/exceptions'
 require 'action_view'
 require 'simple_display/display_block'
 require 'simple_display/action_view_extensions/display_helper'

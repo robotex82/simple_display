@@ -1,0 +1,18 @@
+<h1>Listing books</h1>
+
+<% @books.each do |book| %>
+  <ul>
+  <%= display_for book, :as => :unordered_list do |d| %>
+    <%= d.display :title %>
+    <%= d.display :price, :as => :currency %>
+    <%= d.display :description %>
+    <li><%= link_to 'Show', book %></li>
+    <li><%= link_to 'Edit', edit_book_path(book) %></li>
+    <li><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<br />
+
+<%= link_to 'New Book', new_book_path %>
