@@ -15,19 +15,19 @@ module SimpleDisplay
           display_value(field_value, :field => field, &block)
         end
       end
-      
+
       def display_action(action, &block)
         return helper.capture(action, &block) if block_given?
         action
       end
-      
+
       private
 
       def extract_field_value(field)
         if model.respond_to?(:public_send)
-          field_value = model.public_send(field)
+          field_value = model.public_send(field).to_s
         else
-          field_value = model.send(field)
+          field_value = model.send(field).to_s
         end
       end
 
