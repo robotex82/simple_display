@@ -25,10 +25,11 @@ module SimpleDisplay
 
       def extract_field_value(field)
         if model.respond_to?(:public_send)
-          field_value = model.public_send(field).to_s
+          field_value = model.public_send(field)
         else
-          field_value = model.send(field).to_s
+          field_value = model.send(field)
         end
+        return field_value.nil? ? "" : field_value
       end
 
       def display_value(field_value, options = {}, &block)
