@@ -59,7 +59,7 @@ module SimpleDisplay
       end
 
       def delete_action
-        helper.link_to 'Destroy', model, method: :delete, data: { confirm: 'Are you sure?' }
+        helper.link_to 'Destroy', model, :method => :delete, :data => { :confirm => 'Are you sure?' }
       end
     end
   end

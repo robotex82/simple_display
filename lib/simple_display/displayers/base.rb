@@ -37,7 +37,7 @@ module SimpleDisplay
 
       def value(field_value, options = {}, &block)
         return helper.capture(field_value, &block) if block_given?
-        return helper.link_to field_value, field_value if options.has_key?(:field) and model.class.reflect_on_all_associations.map(&:name).include?(options[:field])
+        # return helper.link_to field_value, field_value if options.has_key?(:field) and model.class.reflect_on_all_associations.map(&:name).include?(options[:field])
         field_value
       end
     end

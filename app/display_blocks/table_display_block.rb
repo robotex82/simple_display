@@ -1,7 +1,7 @@
 class TableDisplayBlock < SimpleDisplay::DisplayBlock::Base
   def display(field, options = {}, &block)
     label = extract_field_label(field)
-    value_prefix + super(field, options, &block) + value_suffix
+    "#{value_prefix}#{super(field, options, &block)}#{value_suffix}".html_safe
   end
   
 #  def actions(options = {}, &block)
