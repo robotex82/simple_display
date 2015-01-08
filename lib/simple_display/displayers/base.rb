@@ -8,12 +8,10 @@ module SimpleDisplay
         @helper = helper
       end
 
-      def display(field, label = nil, &block)
-        field_value = extract_field_value(field)
+      def display(field, label = nil, options = {}, &block)
+        field_value = block_given? ? nil : extract_field_value(field)
 
-        if field_value.present?
-          display_value(field_value, :field => field, &block)
-        end
+        display_value(field_value, :field => field, &block)
       end
 
       def display_action(action, &block)

@@ -11,8 +11,10 @@ module SimpleDisplay
 
       def display(field, options = {}, &block)
         options.reverse_merge!({ :as => :default })
+        displayer_type = options.delete(:as)
+        label = options.delete(:label)
 
-        displayer(options[:as]).display(field, options[:label], &block)
+        displayer(displayer_type).display(field, label, options, &block)
       end
 
       def actions(options = {}, &block)
